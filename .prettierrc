@@ -1,0 +1,8 @@
+{
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindStylesheet": "./src/app/globals.css",
+  "semi": false,
+  "experimentalTernaries": true,
+  "objectWrap": "collapse",
+  "proseWrap": "always"
+}
