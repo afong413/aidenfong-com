@@ -2,11 +2,28 @@ import { defineConfig, globalIgnores } from "eslint/config"
 import nextVitals from "eslint-config-next/core-web-vitals"
 import nextTs from "eslint-config-next/typescript"
 import prettier from "eslint-plugin-prettier/recommended"
+import * as mdx from "eslint-plugin-mdx"
 
 const eslintConfig = defineConfig([
-  ...nextVitals,
+  ...nextVitals.map((config) =>
+    config.name === "next" ?
+      { ...config, files: [...config.files, "**/*.mdx"] }
+    : config,
+  ),
   ...nextTs,
   prettier,
+  {
+    ...mdx.flat,
+    processor: mdx.createRemarkProcessor({ lintCodeBlocks: true }),
+  },
+  {
+    ...mdx.flatCodeBlocks,
+    rules: { ...mdx.flatCodeBlocks.rules, "no-unused-vars": "off" },
+  },
+  {
+    files: ["**/*.mdx"],
+    rules: { "mdx/remark": "error", "import/no-unresolved": "error" },
+  },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:
