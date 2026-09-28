@@ -24,6 +24,10 @@ const eslintConfig = defineConfig([
     files: ["**/*.mdx"],
     rules: { "mdx/remark": "error", "import/no-unresolved": "error" },
   },
+  {
+    files: ["**/*.{js,jsx,mdx,ts,tsx}"],
+    rules: { "@typescript-eslint/no-unused-vars": "error" },
+  },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:
