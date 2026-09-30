@@ -11,7 +11,6 @@ const eslintConfig = defineConfig([
     : config,
   ),
   ...nextTs,
-  prettier,
   {
     ...mdx.flat,
     processor: mdx.createRemarkProcessor({ lintCodeBlocks: true }),
@@ -28,6 +27,7 @@ const eslintConfig = defineConfig([
     files: ["**/*.{js,jsx,mdx,ts,tsx}"],
     rules: { "@typescript-eslint/no-unused-vars": "error" },
   },
+  prettier,
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:
