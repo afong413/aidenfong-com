@@ -25,6 +25,10 @@ const eslintConfig = defineConfig([
     rules: { "mdx/remark": "error", "import/no-unresolved": "error" },
   },
   {
+    files: ["**/*.{js,jsx,mdx,ts,tsx}"],
+    rules: { "@typescript-eslint/no-unused-vars": "error" },
+  },
+  {
     plugins: { "simple-import-sort": simpleImportSort },
     rules: {
       "simple-import-sort/imports": "error",
