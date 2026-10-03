@@ -28,5 +28,5 @@
     "**/*.mdx"
   ],
   "exclude": ["node_modules"],
-  "mdx": { "checkMdx": true }
+  "mdx": { "checkMdx": true, "plugins": ["remark-math"] }
 }
