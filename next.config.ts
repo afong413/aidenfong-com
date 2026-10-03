@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
 }
 
-const withMDX = createMDX({})
+const withMDX = createMDX({
+  options: { remarkPlugins: ["remark-math"], rehypePlugins: ["rehype-katex"] },
+})
 
 export default withMDX(nextConfig)
