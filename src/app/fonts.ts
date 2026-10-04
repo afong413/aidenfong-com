@@ -1,10 +1,15 @@
+import "../fonts/lxgw-wenkai/lxgw-wenkai.css"
+
 import {
+  Klee_One,
+  Ma_Shan_Zheng,
   Noto_Sans_JP,
   Noto_Sans_SC,
   Noto_Serif_JP,
   Noto_Serif_SC,
   Source_Sans_3,
   Source_Serif_4,
+  Yuji_Syuku,
 } from "next/font/google"
 import localFont from "next/font/local"
 
@@ -88,6 +93,43 @@ export const notoSerifJP = Noto_Serif_JP({
 })
 
 /**
+ * Klee One by Fontworks Inc.
+ *
+ * Japanese handwriting. LXGW WenKai is modeled off of this, but is hosted locally
+ * because it is not on Google Fonts and requires splitting.
+ */
+export const kleeOne = Klee_One({
+  variable: "--font-klee-one",
+  weight: ["400", "600"],
+  preload: false,
+  adjustFontFallback: false,
+})
+
+/**
+ * Ma Shan Zheng by Ma ShanZheng
+ *
+ * Simplified Chinese caligraphy.
+ */
+export const maShanZheng = Ma_Shan_Zheng({
+  variable: "--font-ma-shan-zheng",
+  weight: "400",
+  preload: false,
+  adjustFontFallback: false,
+})
+
+/**
+ * Yuji Syuku by Kinuta Font Factory
+ *
+ * Japanese caligraphy.
+ */
+export const yujiSyuku = Yuji_Syuku({
+  variable: "--font-yuji-syuku",
+  weight: "400",
+  preload: false,
+  adjustFontFallback: false,
+})
+
+/**
  * Adobe NotDef by Ken Lunde
  *
  * In development, display Adobe NotDef for invalid font/language
@@ -108,6 +150,9 @@ export const fontVariables = [
   notoSansSC,
   notoSerifJP,
   notoSerifSC,
+  kleeOne,
+  maShanZheng,
+  yujiSyuku,
   // Flag mistakes using Adobe NotDef only during development. globals.css
   // falls back to defaults during prod.
   ...(process.env.NODE_ENV === "development" ? [notDef] : []),

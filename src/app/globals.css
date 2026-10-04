@@ -28,6 +28,8 @@ body {
 
 @layer base {
   :root {
+    --font-lxgw-wenkai: "LXGW WenKai";
+
     @apply font-sans;
   }
 
@@ -70,4 +72,18 @@ body {
   --ff-zh: var(--font-iosevka-ss09), var(--font-noto-sans-sc);
   --ff-ja: var(--font-iosevka-ss09), var(--font-noto-sans-jp);
   --ff-generic: monospace;
+}
+
+@utility font-handwriting {
+  --ff-latin: var(--font-notdef, cursive);
+  --ff-zh: var(--font-lxgw-wenkai);
+  --ff-ja: var(--font-klee-one);
+  --ff-generic: cursive;
+}
+
+@utility font-caligraphy {
+  --ff-latin: var(--font-notdef, cursive);
+  --ff-zh: var(--font-ma-shan-zheng);
+  --ff-ja: var(--font-yuji-syuku);
+  --ff-generic: cursive;
 }

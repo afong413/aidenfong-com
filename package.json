@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "format": "prettier . --write",
+    "fonts:wenkai": "bun scripts/split-lxgw-wenkai.ts",
     "prepare": "husky"
   },
   "dependencies": {
@@ -28,6 +29,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
+    "cn-font-split": "^7.4.3",
     "eslint": "^9",
     "eslint-config-next": "16.3.6",
     "eslint-config-prettier": "^10.1.8",
@@ -51,6 +53,7 @@
     "unrs-resolver"
   ],
   "trustedDependencies": [
+    "cn-font-split",
     "sharp",
     "unrs-resolver"
   ],
