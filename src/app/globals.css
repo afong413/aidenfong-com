@@ -8,8 +8,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --font-sans: initial;
+  --font-serif: initial;
+  --font-mono: initial;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +24,50 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    @apply font-sans;
+  }
+
+  code,
+  kbd,
+  samp,
+  pre {
+    @apply font-mono;
+  }
+
+  :not(.katex *) {
+    font-family: var(--ff-latin), var(--font-notdef, var(--ff-generic));
+  }
+
+  :lang(zh):not(.katex *) {
+    font-family: var(--ff-zh), var(--font-notdef, var(--ff-generic));
+  }
+
+  :lang(ja):not(.katex *) {
+    font-family: var(--ff-ja), var(--font-notdef, var(--ff-generic));
+  }
+}
+
+@utility font-sans {
+  --ff-latin: var(--font-source-sans-3);
+  --ff-zh: var(--font-source-sans-3), var(--font-noto-sans-sc);
+  --ff-ja: var(--font-source-sans-3), var(--font-noto-sans-jp);
+  --ff-generic: sans-serif;
+}
+
+@utility font-serif {
+  --ff-latin: var(--font-source-serif-4);
+  --ff-zh: var(--font-source-serif-4), var(--font-noto-serif-sc);
+  --ff-ja: var(--font-source-serif-4), var(--font-noto-serif-jp);
+  --ff-generic: serif;
+}
+
+@utility font-mono {
+  --ff-latin: var(--font-iosevka-ss09);
+  --ff-zh: var(--font-iosevka-ss09), var(--font-noto-sans-sc);
+  --ff-ja: var(--font-iosevka-ss09), var(--font-noto-sans-jp);
+  --ff-generic: monospace;
 }
