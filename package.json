@@ -58,6 +58,6 @@
     "unrs-resolver"
   ],
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": "eslint --fix"
   }
 }
