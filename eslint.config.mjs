@@ -17,16 +17,34 @@ const eslintConfig = defineConfig([
     processor: mdx.createRemarkProcessor({ lintCodeBlocks: true }),
   },
   {
-    ...mdx.flatCodeBlocks,
-    rules: { ...mdx.flatCodeBlocks.rules, "no-unused-vars": "off" },
-  },
-  {
     files: ["**/*.mdx"],
     rules: { "mdx/remark": "error", "import/no-unresolved": "error" },
   },
   {
     files: ["**/*.{js,jsx,mdx,ts,tsx}"],
     rules: { "@typescript-eslint/no-unused-vars": "error" },
+  },
+  {
+    files: ["**/*.{ts,tsx}"],
+    rules: {
+      "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
+      "@typescript-eslint/explicit-function-return-type": [
+        "error",
+        {
+          allowConciseArrowFunctionExpressionsStartingWithVoid: true,
+          allowExpressions: true,
+          allowIIFEs: true,
+        },
+      ],
+      "@typescript-eslint/consistent-type-imports": [
+        "error",
+        { prefer: "type-imports", fixStyle: "separate-type-imports" },
+      ],
+    },
+  },
+  {
+    ...mdx.flatCodeBlocks,
+    rules: { ...mdx.flatCodeBlocks.rules, "no-unused-vars": "off" },
   },
   {
     plugins: { "simple-import-sort": simpleImportSort },

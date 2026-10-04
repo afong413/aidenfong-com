@@ -18,7 +18,8 @@ import {
   writeFile,
 } from "node:fs/promises"
 import path from "node:path"
-import { parseArgs, ParseArgsConfig } from "node:util"
+import type { ParseArgsConfig } from "node:util"
+import { parseArgs } from "node:util"
 
 const REPO = "lxgw/LxgwWenKai"
 const ASSET = "LXGWWenKai-Regular.ttf"
@@ -72,7 +73,7 @@ if (positionals.length > 1) {
 }
 const [tag] = positionals
 
-const mb = (bytes: number) => `${(bytes / 1024 / 1024).toFixed(1)} MB`
+const mb = (bytes: number): string => `${(bytes / 1024 / 1024).toFixed(1)} MB`
 
 async function get(
   url: string,
@@ -151,7 +152,7 @@ if (asset.digest) {
 // preserves existing files.
 console.log("Splitting")
 await rm(TMP_DIR, { recursive: true, force: true })
-const onInterrupt = () => {
+const onInterrupt = (): never => {
   rmSync(TMP_DIR, { recursive: true, force: true })
   process.exit(130)
 }
