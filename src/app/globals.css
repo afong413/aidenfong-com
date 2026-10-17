@@ -28,8 +28,6 @@ body {
 
 @layer base {
   :root {
-    --font-lxgw-wenkai: "LXGW WenKai";
-
     @apply font-sans;
   }
 
