@@ -101,6 +101,7 @@ export const notoSerifJP = Noto_Serif_JP({
 export const kleeOne = Klee_One({
   variable: "--font-klee-one",
   weight: ["400", "600"],
+  display: "block",
   preload: false,
   adjustFontFallback: false,
 })
@@ -113,6 +114,7 @@ export const kleeOne = Klee_One({
 export const maShanZheng = Ma_Shan_Zheng({
   variable: "--font-ma-shan-zheng",
   weight: "400",
+  display: "block",
   preload: false,
   adjustFontFallback: false,
 })
@@ -125,6 +127,7 @@ export const maShanZheng = Ma_Shan_Zheng({
 export const yujiSyuku = Yuji_Syuku({
   variable: "--font-yuji-syuku",
   weight: "400",
+  display: "block",
   preload: false,
   adjustFontFallback: false,
 })

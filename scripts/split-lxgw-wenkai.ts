@@ -167,7 +167,7 @@ try {
     css: {
       fontFamily: "LXGW WenKai",
       fontWeight: "400",
-      fontDisplay: "swap",
+      fontDisplay: "block",
       fileName: CSS_FILE,
     },
     testHtml: false,
