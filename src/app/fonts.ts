@@ -108,7 +108,7 @@ export const kleeOne = Klee_One({
 /**
  * Ma Shan Zheng by Ma ShanZheng
  *
- * Simplified Chinese caligraphy.
+ * Simplified Chinese calligraphy.
  */
 export const maShanZheng = Ma_Shan_Zheng({
   variable: "--font-ma-shan-zheng",
@@ -120,7 +120,7 @@ export const maShanZheng = Ma_Shan_Zheng({
 /**
  * Yuji Syuku by Kinuta Font Factory
  *
- * Japanese caligraphy.
+ * Japanese calligraphy.
  */
 export const yujiSyuku = Yuji_Syuku({
   variable: "--font-yuji-syuku",

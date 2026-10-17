@@ -81,7 +81,7 @@ body {
   --ff-generic: cursive;
 }
 
-@utility font-caligraphy {
+@utility font-calligraphy {
   --ff-latin: var(--font-notdef, cursive);
   --ff-zh: var(--font-ma-shan-zheng);
   --ff-ja: var(--font-yuji-syuku);
