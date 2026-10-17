@@ -13,35 +13,14 @@ import {
 } from "next/font/google"
 import localFont from "next/font/local"
 
+// MARK: Sans Serif
+
 /**
  * Source Sans 3 by Paul D. Hunt
  */
 export const sourceSans3 = Source_Sans_3({
   variable: "--font-source-sans-3",
   subsets: ["latin"],
-})
-
-/**
- * Source Serif 4 by Frank Grießhammer
- */
-export const sourceSerif4 = Source_Serif_4({
-  variable: "--font-source-serif-4",
-  subsets: ["latin"],
-  preload: false,
-})
-
-/**
- * Iosevka by Belleve Invis
- *
- * Style Set 09 (Source Code Pro Style). Chosen over Source Code Pro itself
- * because Iosevka uses latin glyphs of width 500 rather than Source Code Pro's
- * 600. This allows it to maintain alignment alongside CJK characters if
- * necessary. Inteded to be used with Noto Sans SC and Noto Serif JP.
- */
-export const isosevkaSS09 = localFont({
-  src: "../fonts/IosevkaFixedSS09-Regular.woff2",
-  variable: "--font-iosevka-ss09",
-  adjustFontFallback: false,
 })
 
 /**
@@ -52,18 +31,6 @@ export const isosevkaSS09 = localFont({
  */
 export const notoSansSC = Noto_Sans_SC({
   variable: "--font-noto-sans-sc",
-  preload: false,
-  adjustFontFallback: false,
-})
-
-/**
- * Noto Serif Simplified Chinese by 한동훈, Frank Grießhammer, 西塚涼子, Sandoll
- * Communications, 박수현, and others
- *
- * Equivlent to Adobe's Source Han Serif. Designed to work with Source Serif 4.
- */
-export const notoSerifSC = Noto_Serif_SC({
-  variable: "--font-noto-serif-sc",
   preload: false,
   adjustFontFallback: false,
 })
@@ -80,6 +47,29 @@ export const notoSansJP = Noto_Sans_JP({
   adjustFontFallback: false,
 })
 
+// MARK: Serif
+
+/**
+ * Source Serif 4 by Frank Grießhammer
+ */
+export const sourceSerif4 = Source_Serif_4({
+  variable: "--font-source-serif-4",
+  subsets: ["latin"],
+  preload: false,
+})
+
+/**
+ * Noto Serif Simplified Chinese by 한동훈, Frank Grießhammer, 西塚涼子, Sandoll
+ * Communications, 박수현, and others
+ *
+ * Equivlent to Adobe's Source Han Serif. Designed to work with Source Serif 4.
+ */
+export const notoSerifSC = Noto_Serif_SC({
+  variable: "--font-noto-serif-sc",
+  preload: false,
+  adjustFontFallback: false,
+})
+
 /**
  * Noto Serif Japanese by 한동훈, Frank Grießhammer, 西塚涼子, Sandoll Communications,
  * 박수현, and others
@@ -91,6 +81,33 @@ export const notoSerifJP = Noto_Serif_JP({
   preload: false,
   adjustFontFallback: false,
 })
+
+// MARK: Monospace
+
+/**
+ * Iosevka by Belleve Invis
+ *
+ * Style Set 09 (Source Code Pro Style). Chosen over Source Code Pro itself
+ * because Iosevka uses latin glyphs of width 500 rather than Source Code Pro's
+ * 600. This allows it to maintain alignment alongside CJK characters if
+ * necessary. Inteded to be used with Noto Sans SC and Noto Serif JP.
+ */
+export const isosevkaSS09 = localFont({
+  src: "../fonts/IosevkaFixedSS09-Regular.woff2",
+  variable: "--font-iosevka-ss09",
+  adjustFontFallback: false,
+})
+
+// MARK: Handwriting
+
+/**
+ * LXGW WenKai by LXGW
+ *
+ * Simplified Chinese handwriting, modeled off of Klee One. Hosted locally and
+ * defined in src/fonts/lxgw-wenkai/lxgw-wenkai.css because it is not in Google
+ * Fonts and requires splitting.
+ */
+export const lxgwWenKai = undefined
 
 /**
  * Klee One by Fontworks Inc.
@@ -105,6 +122,8 @@ export const kleeOne = Klee_One({
   preload: false,
   adjustFontFallback: false,
 })
+
+// MARK: Calligraphy
 
 /**
  * Ma Shan Zheng by Ma ShanZheng
@@ -131,6 +150,8 @@ export const yujiSyuku = Yuji_Syuku({
   preload: false,
   adjustFontFallback: false,
 })
+
+// MARK: Other
 
 /**
  * Adobe NotDef by Ken Lunde
