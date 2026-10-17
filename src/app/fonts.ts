@@ -112,8 +112,8 @@ export const lxgwWenKai = undefined
 /**
  * Klee One by Fontworks Inc.
  *
- * Japanese handwriting. LXGW WenKai is modeled off of this, but is hosted locally
- * because it is not on Google Fonts and requires splitting.
+ * Japanese handwriting. LXGW WenKai is modeled off of this, but is hosted
+ * locally because it is not on Google Fonts and requires splitting.
  */
 export const kleeOne = Klee_One({
   variable: "--font-klee-one",
