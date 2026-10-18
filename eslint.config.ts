@@ -8,7 +8,7 @@ import simpleImportSort from "eslint-plugin-simple-import-sort"
 const eslintConfig = defineConfig([
   ...nextVitals.map((config) =>
     config.name === "next" ?
-      { ...config, files: [...config.files, "**/*.mdx"] }
+      { ...config, files: [...(config.files ?? []), "**/*.mdx"] }
     : config,
   ),
   ...nextTs,
