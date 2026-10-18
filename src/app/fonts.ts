@@ -1,5 +1,3 @@
-import "../fonts/lxgw-wenkai/lxgw-wenkai.css"
-
 import {
   Klee_One,
   Ma_Shan_Zheng,
