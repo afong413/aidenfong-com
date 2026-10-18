@@ -2,6 +2,7 @@ import "./globals.css"
 import "katex/dist/katex.min.css"
 
 import type { Metadata } from "next"
+import { ThemeProvider } from "next-themes"
 import type { JSX } from "react/jsx-runtime"
 
 import { fontVariables } from "./fonts"
@@ -15,8 +16,16 @@ export default function RootLayout({
   children,
 }: LayoutProps<"/">): JSX.Element {
   return (
-    <html lang="en" className={`${fontVariables} h-full antialiased`}>
-      <body className="flex min-h-full flex-col">{children}</body>
+    <html
+      lang="en"
+      className={`${fontVariables} h-full antialiased`}
+      suppressHydrationWarning
+    >
+      <body className="flex min-h-full flex-col bg-background text-foreground">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
